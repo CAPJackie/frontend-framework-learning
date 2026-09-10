@@ -1,0 +1,1 @@
+{"root":["./src/main.ts","./src/router.ts","./src/shims-vue.d.ts","./src/stores/todos.ts","./src/app.vue","./src/components/counter.vue","./src/views/todosview.vue","./src/views/usersview.vue","./vite.config.ts"],"version":"5.9.3"}

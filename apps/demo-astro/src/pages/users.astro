@@ -1,0 +1,37 @@
+---
+import Base from "../layouts/Base.astro";
+import { USERS_API_URL, type User } from "@lab/reference-spec";
+
+// This runs at BUILD time (SSG) — the frontmatter never ships to the browser.
+// No island, no client JS: the table below is pure static HTML. Compare with the
+// Vue/Angular demos, which fetch the same endpoint in the browser (CSR).
+const users: User[] = await fetch(USERS_API_URL).then((r) => r.json());
+---
+
+<Base title="Users · Astro demo">
+  <section class="lab-card">
+    <h2 style="margin-top:0">Users — fetched at build time (SSG)</h2>
+    <p style="color:var(--lab-muted);font-size:0.9rem">
+      Fetched in the page frontmatter, so it's baked into static HTML with zero client JS.
+      An SSR adapter would let this run per-request (with ISR caching).
+    </p>
+    <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
+      <thead>
+        <tr style="text-align:left;color:var(--lab-muted)">
+          <th style="padding:0.4rem 0">Name</th><th>Username</th><th>Company</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          users.map((u) => (
+            <tr style="border-top:1px solid var(--lab-border)">
+              <td style="padding:0.4rem 0">{u.name}</td>
+              <td style="color:var(--lab-muted)">@{u.username}</td>
+              <td style="color:var(--lab-muted)">{u.company.name}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </section>
+</Base>

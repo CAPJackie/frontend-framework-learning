@@ -1,0 +1,23 @@
+{
+  "name": "frontend-frameworks-learning-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A hands-on monorepo comparing Next.js, Vue, Angular, TanStack Start and Astro across core frontend concepts.",
+  "packageManager": "pnpm@11.25.0",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "dev:hub": "pnpm --filter hub-next dev",
+    "dev:vue": "pnpm --filter demo-vue dev",
+    "dev:angular": "pnpm --filter demo-angular dev",
+    "dev:astro": "pnpm --filter demo-astro dev",
+    "dev:tanstack": "pnpm --filter demo-tanstack dev"
+  },
+  "devDependencies": {
+    "turbo": "^2.5.6"
+  }
+}

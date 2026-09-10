@@ -1,0 +1,35 @@
+---
+import "@lab/ui-tokens/tokens.css";
+interface Props {
+  title?: string;
+}
+const { title = "Astro demo · Frontend Lab" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="lab-shell">
+      <div class="lab-container">
+        <header style="margin-bottom:1.5rem">
+          <p style="color:var(--fw-astro);font-weight:600;letter-spacing:0.02em">Astro demo</p>
+          <h1 style="font-size:1.75rem;margin:0.25rem 0">Counter + Todo (islands + nanostores)</h1>
+          <p style="color:var(--lab-muted)">
+            The page is static HTML. Only the React <strong>islands</strong> below hydrate —
+            that's Astro's ship-zero-JS-by-default model.
+          </p>
+          <nav class="lab-nav" style="margin-top:0.75rem">
+            <a href="/all">Todos</a>
+            <a href="/users">Users (SSG fetch)</a>
+          </nav>
+        </header>
+        <slot />
+      </div>
+    </div>
+  </body>
+</html>

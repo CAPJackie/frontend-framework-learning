@@ -1,0 +1,24 @@
+---
+import Base from "../layouts/Base.astro";
+import Counter from "../islands/Counter.tsx";
+import TodoApp from "../islands/TodoApp.tsx";
+import { TODO_FILTERS, type TodoFilter } from "@lab/reference-spec";
+
+// SSG: one static page per filter is generated at build time.
+export function getStaticPaths() {
+  return TODO_FILTERS.map((filter) => ({ params: { filter } }));
+}
+
+const { filter } = Astro.params as { filter: TodoFilter };
+---
+
+<Base>
+  <section class="lab-card" style="margin-bottom:1rem">
+    <h2 style="font-size:0.9rem;color:var(--lab-muted);margin-top:0">Local state · Counter</h2>
+    <!-- client:visible → this island hydrates only when scrolled into view -->
+    <Counter client:visible />
+  </section>
+
+  <!-- client:load → hydrate immediately so the todo interactions work on load -->
+  <TodoApp client:load filter={filter} />
+</Base>

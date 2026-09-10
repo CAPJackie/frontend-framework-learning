@@ -1,0 +1,6 @@
+@import '@lab/ui-tokens/tokens.css';
+
+html,
+body {
+  margin: 0;
+}
