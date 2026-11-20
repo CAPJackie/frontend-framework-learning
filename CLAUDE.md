@@ -34,6 +34,8 @@ pnpm install
 pnpm dev:hub      # or dev:vue / dev:angular / dev:astro / dev:tanstack
 pnpm build        # all five via Turborepo
 pnpm --filter <app> <script>   # target one app
+pnpm validate     # turbo lint + build for all apps — final check
+pnpm format       # prettier at the root (hub-next gets the tailwind plugin; *.astro is ignored)
 ```
 
 ## The reference-feature contract (most important convention)
@@ -46,15 +48,15 @@ Every demo implements the identical feature set defined in `packages/reference-s
 **Changing the contract ripples to all five apps** — that's intentional (it keeps the
 comparison honest). If you edit `packages/reference-spec/src/index.ts`, update every demo.
 
-The point of each app is to show its framework's *idiom*, so match the existing style:
+The point of each app is to show its framework's _idiom_, so match the existing style:
 
-| App | Global state | Router | Users fetch (rendering) |
-|-----|-------------|--------|-------------------------|
-| hub-next | Zustand + persist | file-system App Router | Server Component + ISR (`revalidate`) |
-| demo-vue | Pinia | Vue Router (config) | `onMounted` (CSR) |
-| demo-angular | signals service (DI) | Angular Router | `ngOnInit` (CSR) |
-| demo-astro | nanostores | file-based | frontmatter fetch (SSG) |
-| demo-tanstack | Zustand | typed TanStack Router | loader + `createServerFn` + Query (SSR) |
+| App           | Global state         | Router                 | Users fetch (rendering)                 |
+| ------------- | -------------------- | ---------------------- | --------------------------------------- |
+| hub-next      | Zustand + persist    | file-system App Router | Server Component + ISR (`revalidate`)   |
+| demo-vue      | Pinia                | Vue Router (config)    | `onMounted` (CSR)                       |
+| demo-angular  | signals service (DI) | Angular Router         | `ngOnInit` (CSR)                        |
+| demo-astro    | nanostores           | file-based             | frontmatter fetch (SSG)                 |
+| demo-tanstack | Zustand              | typed TanStack Router  | loader + `createServerFn` + Query (SSR) |
 
 ## Conventions
 
