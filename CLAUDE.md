@@ -34,8 +34,7 @@ pnpm install
 pnpm dev:hub      # or dev:vue / dev:angular / dev:astro / dev:tanstack
 pnpm build        # all five via Turborepo
 pnpm --filter <app> <script>   # target one app
-pnpm validate     # turbo lint + build for all apps — final check
-pnpm format       # prettier at the root (hub-next gets the tailwind plugin; *.astro is ignored)
+pnpm validate     # turbo lint + build for all apps — runs automatically on git push (husky)
 ```
 
 ## The reference-feature contract (most important convention)
