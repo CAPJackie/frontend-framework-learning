@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, useSyncExternalStore } from "react";
 import Link from "next/link";
 import { filterTodos, remainingCount, TODO_FILTERS, type TodoFilter } from "@lab/reference-spec";
 import { useTodos } from "@/app/demo/_store";
@@ -57,6 +57,8 @@ export function FilterTabs({ current }: { current: TodoFilter }) {
  * The list. Reads the global Zustand store. We guard on `mounted` so the
  * localStorage-persisted state doesn't cause an SSR/client hydration mismatch.
  */
+const subscribeNoop = () => () => {};
+
 export function TodoList({ filter }: { filter: TodoFilter }) {
   // Select each slice individually — Zustand v5 has no default shallow equality,
   // so returning a fresh object from one selector would loop re-renders.
@@ -66,8 +68,12 @@ export function TodoList({ filter }: { filter: TodoFilter }) {
   const edit = useTodos((s) => s.edit);
   const clearCompleted = useTodos((s) => s.clearCompleted);
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  // false during SSR and hydration, true afterwards — no setState-in-effect needed.
+  const mounted = useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false,
+  );
 
   const [editingId, setEditingId] = useState<string | null>(null);
   const [draft, setDraft] = useState("");

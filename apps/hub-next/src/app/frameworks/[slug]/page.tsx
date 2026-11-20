@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { FRAMEWORK_DOCS, FRAMEWORK_DOC_LIST } from "@/lib/content/frameworks";
 import { FRAMEWORKS, type FrameworkId } from "@lab/ui-tokens";
-import { Badge } from "@/components/ui/badge";
 import {
   Table,
   TableBody,
