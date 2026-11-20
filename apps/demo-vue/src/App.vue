@@ -7,9 +7,7 @@ import Counter from "./components/Counter.vue";
   <div class="lab-shell">
     <div class="lab-container">
       <header style="margin-bottom: 1.5rem">
-        <p style="color: var(--fw-vue); font-weight: 600; letter-spacing: 0.02em">
-          Vue demo
-        </p>
+        <p style="color: var(--fw-vue); font-weight: 600; letter-spacing: 0.02em">Vue demo</p>
         <h1 style="font-size: 1.75rem; margin: 0.25rem 0">Counter + Todo (Pinia)</h1>
         <p style="color: var(--lab-muted)">
           Same reference feature as the other four apps. Notice <code>v-model</code>

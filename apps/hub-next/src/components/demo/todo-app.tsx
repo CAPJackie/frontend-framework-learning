@@ -82,9 +82,7 @@ export function TodoList({ filter }: { filter: TodoFilter }) {
     <div className="space-y-3">
       <ul className="divide-y divide-border rounded-md border border-border">
         {visible.length === 0 && (
-          <li className="px-4 py-6 text-center text-sm text-muted-foreground">
-            Nothing here.
-          </li>
+          <li className="px-4 py-6 text-center text-sm text-muted-foreground">Nothing here.</li>
         )}
         {visible.map((t) => (
           <li key={t.id} className="flex items-center gap-3 px-4 py-2.5">

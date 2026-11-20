@@ -22,10 +22,10 @@ export default async function UsersPage() {
         <h2 className="text-xl font-semibold">Users — fetched on the server</h2>
         <p className="max-w-3xl text-sm text-muted-foreground">
           This data is fetched in a React Server Component and cached with{" "}
-          <code className="text-foreground">revalidate = 3600</code> (ISR). No client
-          JavaScript loads this list. Compare with <code className="text-foreground">demo-vue</code>{" "}
-          and <code className="text-foreground">demo-angular</code>, which fetch in the browser
-          after mount (CSR).
+          <code className="text-foreground">revalidate = 3600</code> (ISR). No client JavaScript
+          loads this list. Compare with <code className="text-foreground">demo-vue</code> and{" "}
+          <code className="text-foreground">demo-angular</code>, which fetch in the browser after
+          mount (CSR).
         </p>
       </div>
       <Table>

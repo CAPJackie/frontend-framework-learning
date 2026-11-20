@@ -84,10 +84,10 @@ export default function BenchmarksPage() {
       </section>
 
       <section className="rounded-lg border border-border bg-secondary/30 p-5 text-sm text-muted-foreground">
-        <strong className="text-foreground">How to read it, in one line:</strong> Angular is
-        the shrinking incumbent, Next is the high-growth enterprise default for React, Vue is
-        the steady beloved third, and Astro + TanStack are the fast-rising newcomers where the
-        slope matters more than the current size.
+        <strong className="text-foreground">How to read it, in one line:</strong> Angular is the
+        shrinking incumbent, Next is the high-growth enterprise default for React, Vue is the steady
+        beloved third, and Astro + TanStack are the fast-rising newcomers where the slope matters
+        more than the current size.
       </section>
     </div>
   );

@@ -1,7 +1,7 @@
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
-import { makeTodo, SEED_TODOS, TODO_STORAGE_KEY } from '@lab/reference-spec'
-import type { Todo } from '@lab/reference-spec'
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
+import { makeTodo, SEED_TODOS, TODO_STORAGE_KEY } from "@lab/reference-spec";
+import type { Todo } from "@lab/reference-spec";
 
 /**
  * TanStack's stack separates concerns: server state lives in TanStack Query (see
@@ -9,20 +9,19 @@ import type { Todo } from '@lab/reference-spec'
  * the same idea as the Next hub. Implements the shared TodoStoreContract.
  */
 interface TodoState {
-  todos: Todo[]
-  add: (title: string) => void
-  toggle: (id: string) => void
-  edit: (id: string, title: string) => void
-  remove: (id: string) => void
-  clearCompleted: () => void
+  todos: Todo[];
+  add: (title: string) => void;
+  toggle: (id: string) => void;
+  edit: (id: string, title: string) => void;
+  remove: (id: string) => void;
+  clearCompleted: () => void;
 }
 
 export const useTodos = create<TodoState>()(
   persist(
     (set) => ({
       todos: SEED_TODOS,
-      add: (title) =>
-        set((s) => (title.trim() ? { todos: [...s.todos, makeTodo(title)] } : s)),
+      add: (title) => set((s) => (title.trim() ? { todos: [...s.todos, makeTodo(title)] } : s)),
       toggle: (id) =>
         set((s) => ({
           todos: s.todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t)),
@@ -36,4 +35,4 @@ export const useTodos = create<TodoState>()(
     }),
     { name: TODO_STORAGE_KEY },
   ),
-)
+);

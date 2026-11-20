@@ -7,15 +7,15 @@ Run it: `pnpm dev:angular` (from repo root) → http://localhost:4200
 
 ## Look here for…
 
-| Concept | File | What to notice |
-|---|---|---|
-| **Two-way binding** | `src/app/todos/todos.ts` | `[(ngModel)]` — the "banana in a box". |
-| **Local state** | `src/app/counter/counter.ts` | `signal(0)`, read as `count()` in the template. |
-| **Global state** | `src/app/todos.store.ts` | `@Injectable({ providedIn: 'root' })` service of signals + DI. |
-| **Routing** | `src/app/app.routes.ts` | `Routes` config; `withComponentInputBinding()` feeds params as inputs. |
-| **Props from route** | `src/app/todos/todos.ts` | `filter = input.required<TodoFilter>()`. |
-| **Rendering** | `src/app/users/users.ts` | CSR: fetch in `ngOnInit` (browser). |
-| **Control flow** | templates | `@if` / `@for` built-in control flow blocks. |
+| Concept              | File                         | What to notice                                                         |
+| -------------------- | ---------------------------- | ---------------------------------------------------------------------- |
+| **Two-way binding**  | `src/app/todos/todos.ts`     | `[(ngModel)]` — the "banana in a box".                                 |
+| **Local state**      | `src/app/counter/counter.ts` | `signal(0)`, read as `count()` in the template.                        |
+| **Global state**     | `src/app/todos.store.ts`     | `@Injectable({ providedIn: 'root' })` service of signals + DI.         |
+| **Routing**          | `src/app/app.routes.ts`      | `Routes` config; `withComponentInputBinding()` feeds params as inputs. |
+| **Props from route** | `src/app/todos/todos.ts`     | `filter = input.required<TodoFilter>()`.                               |
+| **Rendering**        | `src/app/users/users.ts`     | CSR: fetch in `ngOnInit` (browser).                                    |
+| **Control flow**     | templates                    | `@if` / `@for` built-in control flow blocks.                           |
 
 ## The Angular difference
 

@@ -22,7 +22,9 @@ import { Counter } from './counter/counter';
         </header>
 
         <section class="lab-card" style="margin-bottom:1rem">
-          <h2 style="font-size:0.9rem;color:var(--lab-muted);margin-top:0">Local state · Counter</h2>
+          <h2 style="font-size:0.9rem;color:var(--lab-muted);margin-top:0">
+            Local state · Counter
+          </h2>
           <app-counter />
         </section>
 

@@ -18,7 +18,13 @@
   min-height: 100vh;
   background: var(--lab-bg);
   color: var(--lab-text);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
   line-height: 1.5;
 }
 
@@ -44,7 +50,9 @@
   cursor: pointer;
   font-size: 0.9rem;
 }
-.lab-btn:hover { border-color: var(--lab-muted); }
+.lab-btn:hover {
+  border-color: var(--lab-muted);
+}
 
 .lab-input {
   background: #0e0e13;
@@ -60,4 +68,7 @@
   text-decoration: none;
   margin-right: 1rem;
 }
-.lab-nav a.active { color: var(--lab-text); font-weight: 600; }
+.lab-nav a.active {
+  color: var(--lab-text);
+  font-weight: 600;
+}

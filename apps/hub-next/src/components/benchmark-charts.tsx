@@ -44,13 +44,7 @@ function tooltipStyle() {
   };
 }
 
-export function LineTrend({
-  rows,
-  unit,
-}: {
-  rows: BenchmarkRow[];
-  unit?: string;
-}) {
+export function LineTrend({ rows, unit }: { rows: BenchmarkRow[]; unit?: string }) {
   return (
     <ResponsiveContainer width="100%" height={320}>
       <LineChart data={rows} margin={{ top: 8, right: 8, bottom: 0, left: -12 }}>
@@ -76,11 +70,7 @@ export function LineTrend({
   );
 }
 
-export function StarsBar({
-  data,
-}: {
-  data: { name: string; stars: number; fill: string }[];
-}) {
+export function StarsBar({ data }: { data: { name: string; stars: number; fill: string }[] }) {
   return (
     <ResponsiveContainer width="100%" height={300}>
       <BarChart data={data} margin={{ top: 8, right: 8, bottom: 0, left: -12 }}>

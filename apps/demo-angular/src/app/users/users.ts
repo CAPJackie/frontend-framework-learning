@@ -21,7 +21,9 @@ import { USERS_API_URL, type User } from '@lab/reference-spec';
         <table style="width:100%;border-collapse:collapse;font-size:0.9rem">
           <thead>
             <tr style="text-align:left;color:var(--lab-muted)">
-              <th style="padding:0.4rem 0">Name</th><th>Username</th><th>Company</th>
+              <th style="padding:0.4rem 0">Name</th>
+              <th>Username</th>
+              <th>Company</th>
             </tr>
           </thead>
           <tbody>

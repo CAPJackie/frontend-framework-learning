@@ -62,16 +62,16 @@ Every demo implements the same contract from [`packages/reference-spec`](package
 
 ## Learning index — where to look for each concept
 
-| Concept | Read in the hub | Compare the code |
-|---|---|---|
-| Two-way binding | `/concepts/two-way-binding` | Vue `v-model`, Angular `[(ngModel)]`, React `value/onChange` |
-| Local vs global state | `/concepts/state` | Pinia · Angular signals service · Zustand · nanostores |
-| Routing | `/concepts/routing` | file-system · Vue Router · Angular Router · TanStack typed routes |
-| Rendering (CSR/SSR/SSG/ISR) | `/concepts/rendering` | Next ISR · Astro SSG islands · Vue/Angular CSR · TanStack SSR |
-| Passing props | `/concepts/props` | `defineProps` · `input()/output()` · function args |
-| Design patterns | `/concepts/patterns` | good vs bad per framework |
-| Tooling & testing | `/concepts/tooling` | what's built in vs installed |
-| Enterprise adoption | `/benchmarks` | npm · Stack Overflow · State of JS · GitHub, 2021–2025 |
+| Concept                     | Read in the hub             | Compare the code                                                  |
+| --------------------------- | --------------------------- | ----------------------------------------------------------------- |
+| Two-way binding             | `/concepts/two-way-binding` | Vue `v-model`, Angular `[(ngModel)]`, React `value/onChange`      |
+| Local vs global state       | `/concepts/state`           | Pinia · Angular signals service · Zustand · nanostores            |
+| Routing                     | `/concepts/routing`         | file-system · Vue Router · Angular Router · TanStack typed routes |
+| Rendering (CSR/SSR/SSG/ISR) | `/concepts/rendering`       | Next ISR · Astro SSG islands · Vue/Angular CSR · TanStack SSR     |
+| Passing props               | `/concepts/props`           | `defineProps` · `input()/output()` · function args                |
+| Design patterns             | `/concepts/patterns`        | good vs bad per framework                                         |
+| Tooling & testing           | `/concepts/tooling`         | what's built in vs installed                                      |
+| Enterprise adoption         | `/benchmarks`               | npm · Stack Overflow · State of JS · GitHub, 2021–2025            |
 
 Per-framework deep dives live at `/frameworks/<next|vue|angular|astro|tanstack>` in the hub,
 and each demo has its own `README.md` with a "look here for X" table.
@@ -79,8 +79,8 @@ and each demo has its own `README.md` with a "look here for X" table.
 ## Notes
 
 - **Benchmark data** is a curated, cited snapshot (see
-  [`content/benchmarks/sources.md`](content/benchmarks/sources.md)) — read the *shape of the
-  curves*, not exact values.
+  [`content/benchmarks/sources.md`](content/benchmarks/sources.md)) — read the _shape of the
+  curves_, not exact values.
 - **TanStack Start** pins its `@tanstack/*` deps to `latest` (the scaffolder's choice). If a
   future release breaks the build, pin them to a known-good set.
 - The hub authors its comparison content as typed TSX data modules (in

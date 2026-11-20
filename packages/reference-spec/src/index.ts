@@ -70,8 +70,18 @@ export const USERS_API_URL = "https://jsonplaceholder.typicode.com/users";
 
 export const SEED_TODOS: Todo[] = [
   { id: "seed-1", title: "Understand two-way binding", done: true, createdAt: 1_700_000_000_000 },
-  { id: "seed-2", title: "Compare local vs global state", done: false, createdAt: 1_700_000_100_000 },
-  { id: "seed-3", title: "See how each framework routes", done: false, createdAt: 1_700_000_200_000 },
+  {
+    id: "seed-2",
+    title: "Compare local vs global state",
+    done: false,
+    createdAt: 1_700_000_100_000,
+  },
+  {
+    id: "seed-3",
+    title: "See how each framework routes",
+    done: false,
+    createdAt: 1_700_000_200_000,
+  },
 ];
 
 // ---------------------------------------------------------------------------
@@ -92,7 +102,10 @@ export function filterTodos(todos: Todo[], filter: TodoFilter): Todo[] {
 export function makeTodo(title: string): Todo {
   return {
     // crypto.randomUUID is available in every target runtime (Node 20+, modern browsers).
-    id: typeof crypto !== "undefined" && "randomUUID" in crypto ? crypto.randomUUID() : String(Date.now() + Math.random()),
+    id:
+      typeof crypto !== "undefined" && "randomUUID" in crypto
+        ? crypto.randomUUID()
+        : String(Date.now() + Math.random()),
     title: title.trim(),
     done: false,
     createdAt: Date.now(),

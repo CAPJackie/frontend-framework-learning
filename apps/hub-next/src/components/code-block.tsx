@@ -29,9 +29,7 @@ export function CodeBlock({
             />
           )}
           {meta && <span className="font-medium">{meta.name}</span>}
-          {filename && (
-            <span className="font-mono text-muted-foreground">{filename}</span>
-          )}
+          {filename && <span className="font-mono text-muted-foreground">{filename}</span>}
         </figcaption>
       )}
       <pre className="overflow-x-auto px-4 py-3 text-[13px] leading-relaxed">

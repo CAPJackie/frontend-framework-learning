@@ -46,19 +46,41 @@ function commitEdit(id: string) {
     </form>
 
     <nav class="lab-nav" style="margin-bottom: 0.75rem">
-      <RouterLink v-for="f in TODO_FILTERS" :key="f" :to="`/${f}`" style="text-transform: capitalize">
+      <RouterLink
+        v-for="f in TODO_FILTERS"
+        :key="f"
+        :to="`/${f}`"
+        style="text-transform: capitalize"
+      >
         {{ f }}
       </RouterLink>
     </nav>
 
-    <ul style="list-style: none; padding: 0; margin: 0; border: 1px solid var(--lab-border); border-radius: 8px">
-      <li v-if="visible.length === 0" style="padding: 1.25rem; text-align: center; color: var(--lab-muted)">
+    <ul
+      style="
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        border: 1px solid var(--lab-border);
+        border-radius: 8px;
+      "
+    >
+      <li
+        v-if="visible.length === 0"
+        style="padding: 1.25rem; text-align: center; color: var(--lab-muted)"
+      >
         Nothing here.
       </li>
       <li
         v-for="t in visible"
         :key="t.id"
-        style="display: flex; align-items: center; gap: 0.6rem; padding: 0.5rem 0.75rem; border-top: 1px solid var(--lab-border)"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 0.6rem;
+          padding: 0.5rem 0.75rem;
+          border-top: 1px solid var(--lab-border);
+        "
       >
         <input type="checkbox" :checked="t.done" @change="store.toggle(t.id)" />
         <input
@@ -82,7 +104,15 @@ function commitEdit(id: string) {
       </li>
     </ul>
 
-    <div style="display: flex; justify-content: space-between; margin-top: 0.6rem; font-size: 0.75rem; color: var(--lab-muted)">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.6rem;
+        font-size: 0.75rem;
+        color: var(--lab-muted);
+      "
+    >
       <span>{{ remaining }} remaining</span>
       <button class="lab-btn" style="font-size: 0.75rem" @click="store.clearCompleted()">
         clear completed

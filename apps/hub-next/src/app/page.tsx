@@ -16,10 +16,9 @@ export default function Home() {
           Five frameworks, one feature, side by side.
         </h1>
         <p className="max-w-2xl text-lg text-muted-foreground">
-          Next.js, Vue, Angular, TanStack Start and Astro — each builds the{" "}
-          <em>same</em> counter + todo app, so you can compare how each handles two-way
-          binding, state, routing, rendering and tooling. Then read the enterprise
-          adoption trends over the last five years.
+          Next.js, Vue, Angular, TanStack Start and Astro — each builds the <em>same</em> counter +
+          todo app, so you can compare how each handles two-way binding, state, routing, rendering
+          and tooling. Then read the enterprise adoption trends over the last five years.
         </p>
         <div className="flex flex-wrap gap-3">
           <Button asChild>
@@ -52,10 +51,7 @@ export default function Home() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p className="text-sm text-muted-foreground">{f.tagline}</p>
-                <Link
-                  href={`/frameworks/${f.id}`}
-                  className="text-sm font-medium hover:underline"
-                >
+                <Link href={`/frameworks/${f.id}`} className="text-sm font-medium hover:underline">
                   Deep dive →
                 </Link>
               </CardContent>
@@ -69,8 +65,8 @@ export default function Home() {
         <div className="space-y-2">
           <h2 className="text-2xl font-semibold tracking-tight">The comparison matrix</h2>
           <p className="text-muted-foreground">
-            Every core concept, every framework, in one grid. Click a concept for the deep
-            dive with runnable code from the demo apps.
+            Every core concept, every framework, in one grid. Click a concept for the deep dive with
+            runnable code from the demo apps.
           </p>
         </div>
         <ConceptMatrix />

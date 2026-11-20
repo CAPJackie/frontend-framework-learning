@@ -17,8 +17,8 @@ onMounted(async () => {
   <section class="lab-card">
     <h2 style="margin-top: 0">Users — fetched in the browser (CSR)</h2>
     <p style="color: var(--lab-muted); font-size: 0.9rem">
-      This runs in <code>onMounted</code>, so the fetch happens client-side after hydration.
-      Nuxt would let you move this to the server.
+      This runs in <code>onMounted</code>, so the fetch happens client-side after hydration. Nuxt
+      would let you move this to the server.
     </p>
     <p v-if="loading" style="color: var(--lab-muted)">Loading…</p>
     <table v-else style="width: 100%; border-collapse: collapse; font-size: 0.9rem">

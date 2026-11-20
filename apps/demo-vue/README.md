@@ -6,15 +6,15 @@ Run it: `pnpm dev:vue` (from repo root) → http://localhost:5173
 
 ## Look here for…
 
-| Concept | File | What to notice |
-|---|---|---|
-| **Two-way binding** | `src/views/TodosView.vue` | `v-model="newTitle"` — one directive, both directions. |
-| **Local state** | `src/components/Counter.vue` | `ref(0)` and `@click="count++"`. |
-| **Global state** | `src/stores/todos.ts` | Pinia store; you mutate `this.todos` directly and the UI reacts. |
-| **Derived state** | `src/views/TodosView.vue` | `computed()` for the filtered list — cached. |
-| **Routing** | `src/router.ts` | `createRouter` with config objects + `<RouterLink>`. |
-| **Rendering** | `src/views/UsersView.vue` | CSR: fetch runs in `onMounted` (browser). |
-| **Props** | `src/views/TodosView.vue` | `defineProps<{ filter }>()` from the route param. |
+| Concept             | File                         | What to notice                                                   |
+| ------------------- | ---------------------------- | ---------------------------------------------------------------- |
+| **Two-way binding** | `src/views/TodosView.vue`    | `v-model="newTitle"` — one directive, both directions.           |
+| **Local state**     | `src/components/Counter.vue` | `ref(0)` and `@click="count++"`.                                 |
+| **Global state**    | `src/stores/todos.ts`        | Pinia store; you mutate `this.todos` directly and the UI reacts. |
+| **Derived state**   | `src/views/TodosView.vue`    | `computed()` for the filtered list — cached.                     |
+| **Routing**         | `src/router.ts`              | `createRouter` with config objects + `<RouterLink>`.             |
+| **Rendering**       | `src/views/UsersView.vue`    | CSR: fetch runs in `onMounted` (browser).                        |
+| **Props**           | `src/views/TodosView.vue`    | `defineProps<{ filter }>()` from the route param.                |
 
 ## The Vue difference
 

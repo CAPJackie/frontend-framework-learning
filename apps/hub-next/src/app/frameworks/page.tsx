@@ -37,9 +37,7 @@ export default function FrameworksIndex() {
               <CardContent className="space-y-3">
                 <p className="text-sm text-muted-foreground">{f.philosophy.slice(0, 160)}…</p>
                 <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
-                  <span className="rounded border border-border px-2 py-0.5">
-                    {f.maintainer}
-                  </span>
+                  <span className="rounded border border-border px-2 py-0.5">{f.maintainer}</span>
                   <span className="rounded border border-border px-2 py-0.5">
                     since {f.firstReleased}
                   </span>

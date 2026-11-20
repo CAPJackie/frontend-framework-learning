@@ -19,12 +19,14 @@ import { TodosStore } from '../todos.store';
         Global state · Todo (Signals service, persisted, filtered by route)
       </h2>
 
-      <form
-        style="display:flex;gap:0.5rem;margin:0.75rem 0"
-        (ngSubmit)="submit()"
-      >
+      <form style="display:flex;gap:0.5rem;margin:0.75rem 0" (ngSubmit)="submit()">
         <!-- [(ngModel)] keeps state and input in sync, both directions -->
-        <input class="lab-input" name="newTitle" [(ngModel)]="newTitle" placeholder="What needs doing?" />
+        <input
+          class="lab-input"
+          name="newTitle"
+          [(ngModel)]="newTitle"
+          placeholder="What needs doing?"
+        />
         <button class="lab-btn" type="submit">Add</button>
       </form>
 
@@ -34,12 +36,16 @@ import { TodosStore } from '../todos.store';
         }
       </nav>
 
-      <ul style="list-style:none;padding:0;margin:0;border:1px solid var(--lab-border);border-radius:8px">
+      <ul
+        style="list-style:none;padding:0;margin:0;border:1px solid var(--lab-border);border-radius:8px"
+      >
         @if (visible().length === 0) {
           <li style="padding:1.25rem;text-align:center;color:var(--lab-muted)">Nothing here.</li>
         }
         @for (t of visible(); track t.id) {
-          <li style="display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0.75rem;border-top:1px solid var(--lab-border)">
+          <li
+            style="display:flex;align-items:center;gap:0.6rem;padding:0.5rem 0.75rem;border-top:1px solid var(--lab-border)"
+          >
             <input type="checkbox" [checked]="t.done" (change)="store.toggle(t.id)" />
             @if (editingId() === t.id) {
               <input
@@ -59,14 +65,20 @@ import { TodosStore } from '../todos.store';
                 >{{ t.title }}</span
               >
             }
-            <button class="lab-btn" style="font-size:0.75rem" (click)="store.remove(t.id)">delete</button>
+            <button class="lab-btn" style="font-size:0.75rem" (click)="store.remove(t.id)">
+              delete
+            </button>
           </li>
         }
       </ul>
 
-      <div style="display:flex;justify-content:space-between;margin-top:0.6rem;font-size:0.75rem;color:var(--lab-muted)">
+      <div
+        style="display:flex;justify-content:space-between;margin-top:0.6rem;font-size:0.75rem;color:var(--lab-muted)"
+      >
         <span>{{ store.remaining() }} remaining</span>
-        <button class="lab-btn" style="font-size:0.75rem" (click)="store.clearCompleted()">clear completed</button>
+        <button class="lab-btn" style="font-size:0.75rem" (click)="store.clearCompleted()">
+          clear completed
+        </button>
       </div>
     </section>
   `,

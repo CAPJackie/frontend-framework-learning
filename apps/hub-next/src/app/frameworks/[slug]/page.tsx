@@ -37,9 +37,7 @@ const RENDER_KEYS = [
   ["islands", "Islands"],
 ] as const;
 
-export default async function FrameworkPage({
-  params,
-}: PageProps<"/frameworks/[slug]">) {
+export default async function FrameworkPage({ params }: PageProps<"/frameworks/[slug]">) {
   const { slug } = await params;
   const doc = FRAMEWORK_DOCS[slug as FrameworkId];
   if (!doc) notFound();
@@ -62,7 +60,9 @@ export default async function FrameworkPage({
         <div className="flex flex-wrap gap-2 text-xs text-muted-foreground">
           <span className="rounded border border-border px-2 py-0.5">{doc.language}</span>
           <span className="rounded border border-border px-2 py-0.5">by {doc.maintainer}</span>
-          <span className="rounded border border-border px-2 py-0.5">since {doc.firstReleased}</span>
+          <span className="rounded border border-border px-2 py-0.5">
+            since {doc.firstReleased}
+          </span>
         </div>
       </header>
 

@@ -63,7 +63,8 @@ export const FRAMEWORK_DOCS: Record<FrameworkId, FrameworkDoc> = {
       islands: false,
       note: "The only framework here that ships all of CSR, SSR, SSG, ISR and streaming as first-class, per-route choices. ISR (revalidate) and PPR (partial prerendering) are Next's signature features.",
     },
-    router: "File-system App Router (app/ directory). Nested layouts, loading/error boundaries, route groups, parallel & intercepting routes. Navigation is client-side after first load.",
+    router:
+      "File-system App Router (app/ directory). Nested layouts, loading/error boundaries, route groups, parallel & intercepting routes. Navigation is client-side after first load.",
     stateBuiltIn:
       "No global store built in. Local state via React hooks (useState/useReducer). Server state is often 'just fetch in a Server Component'. Global client state uses Context or an external lib (Zustand/Redux/Jotai).",
     twoWayBinding:
@@ -72,7 +73,10 @@ export const FRAMEWORK_DOCS: Record<FrameworkId, FrameworkDoc> = {
       { need: "Global client state", solution: "Zustand / Redux Toolkit / Jotai (external)" },
       { need: "Server-state caching (SPA-style)", solution: "TanStack Query or SWR (external)" },
       { need: "Forms & validation", solution: "React Hook Form + Zod (external)" },
-      { need: "Unit / component testing", solution: "Vitest / Jest + React Testing Library (external)" },
+      {
+        need: "Unit / component testing",
+        solution: "Vitest / Jest + React Testing Library (external)",
+      },
       { need: "E2E testing", solution: "Playwright / Cypress (external)" },
     ],
     goodPractices: [
@@ -119,11 +123,12 @@ export const FRAMEWORK_DOCS: Record<FrameworkId, FrameworkDoc> = {
       islands: false,
       note: "Core Vue is CSR. SSR/SSG/ISR come from Nuxt (the Vue meta-framework). This demo is a Vite CSR SPA to isolate Vue itself.",
     },
-    router: "Vue Router (official, external package but first-party). Dynamic route matching, nested routes, navigation guards. History or hash mode.",
+    router:
+      "Vue Router (official, external package but first-party). Dynamic route matching, nested routes, navigation guards. History or hash mode.",
     stateBuiltIn:
       "Reactivity (ref/reactive/computed) is built in for local & shared state. For app-wide stores, Pinia is the official (external) solution — tiny, typed, devtools-friendly.",
     twoWayBinding:
-      "Vue has real two-way binding via v-model. <input v-model=\"title\"> keeps state and the input in sync automatically — the headline convenience React deliberately omits.",
+      'Vue has real two-way binding via v-model. <input v-model="title"> keeps state and the input in sync automatically — the headline convenience React deliberately omits.',
     tooling: [
       { need: "Global state", solution: "Pinia (official, external package)" },
       { need: "Routing", solution: "Vue Router (official, external package)" },
@@ -174,16 +179,23 @@ export const FRAMEWORK_DOCS: Record<FrameworkId, FrameworkDoc> = {
       islands: false,
       note: "Historically a CSR SPA. Angular SSR (formerly Angular Universal) adds server rendering, prerendering (SSG) and now incremental hydration. ISR isn't a first-class concept.",
     },
-    router: "Angular Router (built into the platform). Rich guards, resolvers, lazy-loaded routes, and typed inputs from route params.",
+    router:
+      "Angular Router (built into the platform). Rich guards, resolvers, lazy-loaded routes, and typed inputs from route params.",
     stateBuiltIn:
       "Dependency Injection + services is the built-in state pattern. Signals (built in) give reactive local/shared state. For large apps, NgRx (external, Redux-style) or the lighter Signals-based stores are common.",
     twoWayBinding:
       "Angular's signature [(ngModel)] 'banana in a box' is genuine two-way binding. It's syntactic sugar over property binding [x] + event binding (xChange).",
     tooling: [
       { need: "Global state", solution: "Built-in services/Signals; NgRx for large apps" },
-      { need: "Routing / forms / HTTP", solution: "All built in (@angular/router, forms, common/http)" },
+      {
+        need: "Routing / forms / HTTP",
+        solution: "All built in (@angular/router, forms, common/http)",
+      },
       { need: "SSR / prerender", solution: "@angular/ssr (built in)" },
-      { need: "Testing", solution: "Karma/Jasmine historically; Vitest/Jest + Testing Library increasingly" },
+      {
+        need: "Testing",
+        solution: "Karma/Jasmine historically; Vitest/Jest + Testing Library increasingly",
+      },
       { need: "E2E", solution: "Playwright / Cypress" },
     ],
     goodPractices: [
@@ -229,7 +241,8 @@ export const FRAMEWORK_DOCS: Record<FrameworkId, FrameworkDoc> = {
       islands: true,
       note: "Astro's signature is islands architecture + partial hydration. SSG by default; SSR and ISR (on adapters like Vercel) available. 'CSR' only exists inside hydrated islands.",
     },
-    router: "File-based routing (src/pages). Multi-page by default (each route is its own HTML document). No heavy client router unless you add a SPA framework or View Transitions.",
+    router:
+      "File-based routing (src/pages). Multi-page by default (each route is its own HTML document). No heavy client router unless you add a SPA framework or View Transitions.",
     stateBuiltIn:
       "No global client store — the page is mostly static. For cross-island shared state, nanostores is the recommended tiny library. Local state lives inside each island's framework.",
     twoWayBinding:
@@ -284,7 +297,8 @@ export const FRAMEWORK_DOCS: Record<FrameworkId, FrameworkDoc> = {
       islands: false,
       note: "SSR + streaming with selective/progressive hydration, plus SPA mode and prerendering (SSG). ISR isn't a headline feature; caching is handled via TanStack Query + loaders.",
     },
-    router: "TanStack Router — the most type-safe router here. Search params are first-class, validated and typed. Loaders + Query integration make data fetching part of routing.",
+    router:
+      "TanStack Router — the most type-safe router here. Search params are first-class, validated and typed. Loaders + Query integration make data fetching part of routing.",
     stateBuiltIn:
       "TanStack Query is the server-state layer (caching, background refetch, invalidation). For client UI state you add Zustand/Jotai (external). Router search params double as URL-driven state.",
     twoWayBinding:

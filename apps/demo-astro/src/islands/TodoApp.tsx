@@ -1,19 +1,7 @@
 import { useState } from "react";
 import { useStore } from "@nanostores/react";
-import {
-  filterTodos,
-  remainingCount,
-  TODO_FILTERS,
-  type TodoFilter,
-} from "@lab/reference-spec";
-import {
-  $todos,
-  addTodo,
-  clearCompleted,
-  editTodo,
-  removeTodo,
-  toggleTodo,
-} from "../stores/todos";
+import { filterTodos, remainingCount, TODO_FILTERS, type TodoFilter } from "@lab/reference-spec";
+import { $todos, addTodo, clearCompleted, editTodo, removeTodo, toggleTodo } from "../stores/todos";
 
 /**
  * The interactive todo island. Reads the shared nanostore via useStore(). Because
@@ -58,13 +46,26 @@ export default function TodoApp({ filter }: { filter: TodoFilter }) {
 
       <nav className="lab-nav" style={{ marginBottom: "0.75rem" }}>
         {TODO_FILTERS.map((f) => (
-          <a key={f} href={`/${f}`} style={{ textTransform: "capitalize" }} className={f === filter ? "active" : ""}>
+          <a
+            key={f}
+            href={`/${f}`}
+            style={{ textTransform: "capitalize" }}
+            className={f === filter ? "active" : ""}
+          >
             {f}
           </a>
         ))}
       </nav>
 
-      <ul style={{ listStyle: "none", padding: 0, margin: 0, border: "1px solid var(--lab-border)", borderRadius: 8 }}>
+      <ul
+        style={{
+          listStyle: "none",
+          padding: 0,
+          margin: 0,
+          border: "1px solid var(--lab-border)",
+          borderRadius: 8,
+        }}
+      >
         {visible.length === 0 && (
           <li style={{ padding: "1.25rem", textAlign: "center", color: "var(--lab-muted)" }}>
             Nothing here.
@@ -116,7 +117,11 @@ export default function TodoApp({ filter }: { filter: TodoFilter }) {
                 {t.title}
               </span>
             )}
-            <button className="lab-btn" style={{ fontSize: "0.75rem" }} onClick={() => removeTodo(t.id)}>
+            <button
+              className="lab-btn"
+              style={{ fontSize: "0.75rem" }}
+              onClick={() => removeTodo(t.id)}
+            >
               delete
             </button>
           </li>
@@ -133,7 +138,11 @@ export default function TodoApp({ filter }: { filter: TodoFilter }) {
         }}
       >
         <span>{remainingCount(todos)} remaining</span>
-        <button className="lab-btn" style={{ fontSize: "0.75rem" }} onClick={() => clearCompleted()}>
+        <button
+          className="lab-btn"
+          style={{ fontSize: "0.75rem" }}
+          onClick={() => clearCompleted()}
+        >
           clear completed
         </button>
       </div>

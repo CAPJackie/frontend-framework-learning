@@ -11,7 +11,9 @@ export default function Counter() {
       <button className="lab-btn" onClick={() => setCount((c) => c - 1)}>
         −
       </button>
-      <span style={{ minWidth: "2.5rem", textAlign: "center", fontSize: "1.1rem", fontWeight: 600 }}>
+      <span
+        style={{ minWidth: "2.5rem", textAlign: "center", fontSize: "1.1rem", fontWeight: 600 }}
+      >
         {count}
       </span>
       <button className="lab-btn" onClick={() => setCount((c) => c + 1)}>

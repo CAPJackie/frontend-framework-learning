@@ -40,14 +40,10 @@ export class TodosStore {
     if (title.trim()) this._todos.update((list) => [...list, makeTodo(title)]);
   }
   toggle(id: string) {
-    this._todos.update((list) =>
-      list.map((t) => (t.id === id ? { ...t, done: !t.done } : t)),
-    );
+    this._todos.update((list) => list.map((t) => (t.id === id ? { ...t, done: !t.done } : t)));
   }
   edit(id: string, title: string) {
-    this._todos.update((list) =>
-      list.map((t) => (t.id === id ? { ...t, title } : t)),
-    );
+    this._todos.update((list) => list.map((t) => (t.id === id ? { ...t, title } : t)));
   }
   remove(id: string) {
     this._todos.update((list) => list.filter((t) => t.id !== id));

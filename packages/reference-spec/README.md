@@ -1,7 +1,7 @@
 # @lab/reference-spec
 
 The **contract** shared by all five demo apps. It exists so the comparison is
-apples-to-apples: every demo implements the *same* feature set, differing only in
+apples-to-apples: every demo implements the _same_ feature set, differing only in
 _how_ each framework expresses it.
 
 ## The reference feature

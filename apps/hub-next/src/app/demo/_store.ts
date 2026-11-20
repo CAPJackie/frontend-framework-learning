@@ -2,12 +2,7 @@
 
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import {
-  makeTodo,
-  SEED_TODOS,
-  TODO_STORAGE_KEY,
-  type Todo,
-} from "@lab/reference-spec";
+import { makeTodo, SEED_TODOS, TODO_STORAGE_KEY, type Todo } from "@lab/reference-spec";
 
 /**
  * The Next.js implementation of the shared TodoStoreContract, using Zustand +
@@ -30,8 +25,7 @@ export const useTodos = create<TodoState>()(
   persist(
     (set) => ({
       todos: SEED_TODOS,
-      add: (title) =>
-        set((s) => (title.trim() ? { todos: [...s.todos, makeTodo(title)] } : s)),
+      add: (title) => set((s) => (title.trim() ? { todos: [...s.todos, makeTodo(title)] } : s)),
       toggle: (id) =>
         set((s) => ({
           todos: s.todos.map((t) => (t.id === id ? { ...t, done: !t.done } : t)),
