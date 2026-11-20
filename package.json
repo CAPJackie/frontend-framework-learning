@@ -15,9 +15,14 @@
     "dev:vue": "pnpm --filter demo-vue dev",
     "dev:angular": "pnpm --filter demo-angular dev",
     "dev:astro": "pnpm --filter demo-astro dev",
-    "dev:tanstack": "pnpm --filter demo-tanstack dev"
+    "dev:tanstack": "pnpm --filter demo-tanstack dev",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "validate": "turbo run lint build"
   },
   "devDependencies": {
+    "prettier": "^3.10.1",
+    "prettier-plugin-tailwindcss": "^0.8.1",
     "turbo": "^2.5.6"
   }
 }
