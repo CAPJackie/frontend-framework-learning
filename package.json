@@ -18,9 +18,11 @@
     "dev:tanstack": "pnpm --filter demo-tanstack dev",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "validate": "turbo run lint build"
+    "validate": "turbo run lint build",
+    "prepare": "husky"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "prettier": "^3.10.1",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "turbo": "^2.5.6"
